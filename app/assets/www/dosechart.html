@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<Title>Individual Dose Chart Page</Title>
+	<!-- Displays the dose chart pertaining to the selected dose -->
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.0.css" />
+	<link rel="stylesheet" type="text/css" href="customstyles.css"/>
+
+	<!-- Jquery/Script Files -->
+	<script type="text/javascript" src="cordova-2.3.0.js"></script>
+	<script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.mobile-1.4.0.js"></script>
+</head>
+<body>
+<div data-role='page' id='doseChartPage'>
+	<div data-role='header'>
+		<h1 id="title"></h1>
+		<a id="backbutton" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-icon='back'></a>
+	</div>
+	<img id="doseChart" width="100%"/>
+	<div data-role='footer'>
+		<h4>&copy; 2014 AntiC</h4>
+	</div>
+</div>
+</body>
+<script>
+// Gather the filePath from localStorage
+var filePath = localStorage.currentDoseChart;
+
+// Initialize the back button
+$('#backbutton').click(function() {
+	window.location.assign("doses.html");
+});
+
+// Set the source of the file
+$('#doseChart').attr("src", filePath);
+</script>
+</html>
